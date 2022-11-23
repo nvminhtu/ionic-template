@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "name": "Frameworks",
+      "children": [
+        {
+          "name": "Angular",
+          "children": [
+            {
+              "name": "Libraries",
+              "children": [
+                {
+                  "name": "Ionic"
+                },
+                {
+                  "name": "Angular Material"
+                }
+              ]
+            },
+            {
+              "name": "Links"
+            },
+            {
+              "name": "People"
+            }
+          ]
+        },
+        {
+          "name": "React",
+          "children": [
+            {
+              "name": "Libraries",
+              "children": [
+                {
+                  "name": "Ionic"
+                },
+                {
+                  "name": "React Router"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vue"
+        }
+      ]
+    },
+    {
+      "name": "Languages",
+      "children": [
+        {
+          "name": "Javascript",
+          "children": [
+            {
+              "name": "Typescript"
+            },
+            {
+              "name": "Vanilla"
+            }
+          ]
+        },
+        {
+          "name": "Swift"
+        },
+        {
+          "name": "Swift"
+        }
+      ]
+    }
+  ]
+}
