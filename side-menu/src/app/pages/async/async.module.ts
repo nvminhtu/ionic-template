@@ -8,7 +8,7 @@ import { AsyncPageRoutingModule } from './async-routing.module';
 
 import { AsyncPage } from './async.page';
 
-import { SharedModule } from '../modules/shared/shared.module';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 @NgModule({
   imports: [

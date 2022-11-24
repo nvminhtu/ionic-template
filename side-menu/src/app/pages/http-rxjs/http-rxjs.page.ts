@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/app.models';
+import { User } from '../../models/app.models';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-http-rxjs',
-  templateUrl: './http-rxjs.page.html',
-  styleUrls: ['./http-rxjs.page.scss'],
+  templateUrl: 'http-rxjs.page.html',
+  styleUrls: ['http-rxjs.page.scss'],
 })
 export class HttpRxjsPage implements OnInit {
   // #mt01: 01 - screen

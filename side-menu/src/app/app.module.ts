@@ -10,6 +10,15 @@ import { MtAccordionMenuComponent } from 'src/app/components/mt-accordion-menu/m
 import { MtNavBarMenuComponent } from './components/mt-nav-bar-menu/mt-nav-bar-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// Third Party
+import { LoggingService, LoggingServiceModule } from 'ionic-logging-service';
+// Custom Config
+// import { LoggerConfig } from '';
+import { LoggerConfig } from './configs/logger.config';
+
+export function configureLogging(loggingService: LoggingService): () => void {
+  return () => loggingService.configure(LoggerConfig.configuration);
+}
 @NgModule({
   declarations: [AppComponent, MtAccordionMenuComponent, MtNavBarMenuComponent],
   imports: [
@@ -17,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    LoggingServiceModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

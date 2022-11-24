@@ -5,29 +5,27 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
-  },
-  {
-    path: 'intro',
-    loadChildren: () =>
-      import('./intro/intro.module').then((m) => m.IntroPageModule),
-  },
-  {
-    path: 'search-language',
-    loadChildren: () =>
-      import('./search-language/search-language.module').then(
-        (m) => m.SearchLanguagePageModule
-      ),
+      import('./pages/intro/intro.module').then((m) => m.IntroPageModule),
   },
   {
     path: 'async',
     loadChildren: () =>
-      import('./async/async.module').then((m) => m.AsyncPageModule),
+      import('./pages/async/async.module').then((m) => m.AsyncPageModule),
   },
   {
     path: 'http-rxjs',
     loadChildren: () =>
-      import('./http-rxjs/http-rxjs.module').then((m) => m.HttpRxjsPageModule),
+      import('./pages/http-rxjs/http-rxjs.module').then(
+        (m) => m.HttpRxjsPageModule
+      ),
+  },
+  {
+    path: 'ionic-life-cycle',
+    loadChildren: () => import('./pages/ionic-life-cycle/ionic-life-cycle.module').then( m => m.IonicLifeCyclePageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
 ];
 

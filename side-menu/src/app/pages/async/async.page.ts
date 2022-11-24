@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-async',
-  templateUrl: './async.page.html',
-  styleUrls: ['./async.page.scss'],
+  templateUrl: 'async.page.html',
+  styleUrls: ['async.page.scss'],
 })
 export class AsyncPage implements OnInit {
   messageApp1: any;

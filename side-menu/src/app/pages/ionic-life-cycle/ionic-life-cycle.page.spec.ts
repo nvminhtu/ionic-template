@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SearchLanguagePage } from './search-language.page';
+import { IonicLifeCyclePage } from './ionic-life-cycle.page';
 
-describe('SearchLanguagePage', () => {
-  let component: SearchLanguagePage;
-  let fixture: ComponentFixture<SearchLanguagePage>;
+describe('IonicLifeCyclePage', () => {
+  let component: IonicLifeCyclePage;
+  let fixture: ComponentFixture<IonicLifeCyclePage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchLanguagePage ],
+      declarations: [ IonicLifeCyclePage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchLanguagePage);
+    fixture = TestBed.createComponent(IonicLifeCyclePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

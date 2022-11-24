@@ -4,20 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HttpRxjsPageRoutingModule } from './http-rxjs-routing.module';
+import { IntroPageRoutingModule } from './intro-routing.module';
 
-import { HttpRxjsPage } from './http-rxjs.page';
-
-import { SharedModule } from '../modules/shared/shared.module';
+import { IntroPage } from './intro.page';
+import { SharedModule } from '../../modules/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HttpRxjsPageRoutingModule,
+    IntroPageRoutingModule,
     SharedModule,
   ],
-  declarations: [HttpRxjsPage],
+  declarations: [IntroPage],
 })
-export class HttpRxjsPageModule {}
+export class IntroPageModule {}

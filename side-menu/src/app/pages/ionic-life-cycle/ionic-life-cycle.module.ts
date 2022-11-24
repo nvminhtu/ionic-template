@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SearchLanguagePageRoutingModule } from './search-language-routing.module';
+import { IonicLifeCyclePageRoutingModule } from './ionic-life-cycle-routing.module';
 
-import { SearchLanguagePage } from './search-language.page';
+import { IonicLifeCyclePage } from './ionic-life-cycle.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchLanguagePageRoutingModule
+    IonicLifeCyclePageRoutingModule
   ],
-  declarations: [SearchLanguagePage]
+  declarations: [IonicLifeCyclePage]
 })
-export class SearchLanguagePageModule {}
+export class IonicLifeCyclePageModule {}
