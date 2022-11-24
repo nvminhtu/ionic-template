@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { IonicLifeCyclePageRoutingModule } from './ionic-life-cycle-routing.module';
 
 import { IonicLifeCyclePage } from './ionic-life-cycle.page';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IonicLifeCyclePageRoutingModule
+    IonicLifeCyclePageRoutingModule,
+    SharedModule,
   ],
-  declarations: [IonicLifeCyclePage]
+  declarations: [IonicLifeCyclePage],
 })
 export class IonicLifeCyclePageModule {}

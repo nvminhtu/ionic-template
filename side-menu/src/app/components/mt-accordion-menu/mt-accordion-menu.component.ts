@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mt-accordion-menu.component.scss'],
 })
 export class MtAccordionMenuComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

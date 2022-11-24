@@ -9,9 +9,11 @@ import { RoutePath } from '../../models/app.constant';
 export class MtNavBarMenuComponent implements OnInit {
   inernalLinks = [
     { title: 'Home', url: RoutePath.Home },
+    { title: 'Intro', url: RoutePath.Intro },
     { title: 'Async', url: RoutePath.Async },
     { title: 'HttpRxJS', url: RoutePath.HttpRxJS },
     { title: 'IonicLifeCycle', url: RoutePath.IonicLifeCycle },
+    { title: 'ReactiveForm', url: RoutePath.ReactiveForm },
   ];
 
   constructor() {

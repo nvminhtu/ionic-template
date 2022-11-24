@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 @Injectable()
 export class AppConfig {
-
   static get API_ENDPOINT(): string {
-    return environment.apiVersion !== '' ? (environment.apiUrl + '/' + environment.apiVersion) : environment.apiUrl;
+    return environment.apiVersion !== ''
+      ? environment.apiUrl + '/' + environment.apiVersion
+      : environment.apiUrl;
   }
 
   static get IS_ENABLED_HEY_CARMD_COMMAND() {
@@ -42,4 +43,3 @@ export const INTERVAL_IOS_LISTEN_COMMAND_WAIT = 2_000; // 2 seconds
 export const TIMEOUT_IOS_LISTEN_WAIT = 15_000; // 15 seconds
 export const GET_WEATHER_INTERVAL = 3_600_000; // 1 hour
 export const DEVICE_TEST = '6d8461078b232c80';
-
