@@ -1,0 +1,19 @@
+<app-mt-custom-header pageTitle="HTTP RxJS"></app-mt-custom-header>
+<ion-content>
+  <br />
+  <div>Status: {{ relay }}</div>
+  <div>Data:</div>
+  <pre>{{ response | json }}</pre>
+  <ion-button color="primary" (click)="waitData()">Get Data</ion-button>
+
+  <div>Observalbe simple</div>
+  <!-- <div>{{ users }}</div> -->
+  <ul>
+    <li *ngFor="let user of users">
+      <span>Name: </span>{{user.name}}<br />
+      <span>Company Info: </span>
+      <br />
+      <span>Email: </span>{{user.email}}<br />
+    </li>
+  </ul>
+</ion-content>

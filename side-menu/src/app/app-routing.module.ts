@@ -7,23 +7,27 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'accordion/Overview',
-  //   pathMatch: 'full',
-  // },
-  {
-    path: 'accordion/:path',
-    loadChildren: () =>
-      import('./details/details.module').then((m) => m.DetailsPageModule),
-  },
   {
     path: 'intro',
-    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
+    loadChildren: () =>
+      import('./intro/intro.module').then((m) => m.IntroPageModule),
   },
   {
     path: 'search-language',
-    loadChildren: () => import('./search-language/search-language.module').then( m => m.SearchLanguagePageModule)
+    loadChildren: () =>
+      import('./search-language/search-language.module').then(
+        (m) => m.SearchLanguagePageModule
+      ),
+  },
+  {
+    path: 'async',
+    loadChildren: () =>
+      import('./async/async.module').then((m) => m.AsyncPageModule),
+  },
+  {
+    path: 'http-rxjs',
+    loadChildren: () =>
+      import('./http-rxjs/http-rxjs.module').then((m) => m.HttpRxjsPageModule),
   },
 ];
 

@@ -1,7 +1,7 @@
 {
   "name": "side-menu",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Tu Nguyen",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -61,5 +61,5 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.8.4"
   },
-  "description": "An Ionic project"
+  "description": "Side Project with debugging"
 }

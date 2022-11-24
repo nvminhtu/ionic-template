@@ -1,16 +1,17 @@
 <ion-menu side="start" menuId="nav-menu" contentId="main-content">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
+      <ion-item [routerLink]="['/async']">Async in Angular</ion-item>
+      .<ion-item [routerLink]="['/http-rxjs']">HTTP RxJS</ion-item>
+      <!-- <ion-item>Menu Item</ion-item>
       <ion-item>Menu Item</ion-item>
       <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item> -->
     </ion-list>
   </ion-content>
 </ion-menu>
