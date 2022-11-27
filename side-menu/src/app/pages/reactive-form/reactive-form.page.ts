@@ -13,11 +13,20 @@ export class ReactiveFormPage implements OnInit {
     this.ionicForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
+      mobile: ['', Validators.required],
+      dob:  ['', Validators.required],
     });
   }
 
   ngOnInit() {}
 
+  getDate() {
+    let date = new Date().toISOString().substring(0,10);
+    // setValue cho field
+    this.ionicForm.get('dob').setValue(date, {
+      onlyself: true
+   })
+  }
   submitForm() {
     console.log(this.ionicForm.value);
   }
