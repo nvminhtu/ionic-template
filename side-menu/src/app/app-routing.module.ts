@@ -46,6 +46,11 @@ const routes: Routes = [
         (m) => m.ReactiveFormPageModule
       ),
   },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('./pages/rxjs/rxjs.module').then( m => m.RxjsPageModule)
+  },
+
 ];
 
 @NgModule({

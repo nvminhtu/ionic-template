@@ -5,22 +5,41 @@
       <ion-label position="floating">Name</ion-label>
       <ion-input formControlName="name" type="text" required></ion-input>
     </ion-item>
+    <!-- Error Message -->
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      Name is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+      Name should be min 2 chars long.
+    </span>
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
       <ion-input formControlName="email" type="email" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please provide valid email id.
+    </span>
 
     <ion-item lines="full">
       <ion-label position="floating">Birthday</ion-label>
-      <ion-input formControlName="dob" type="text" required></ion-input>
+      <ion-datetime (ionChange)="getDate($event)" formControlName="dob" [value]="defaultDate"></ion-datetime>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Mobile</ion-label>
       <ion-input formControlName="mobile" type="text" required></ion-input>
     </ion-item>
-
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+      Mobile number is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+      Only numerical values allowed.
+    </span>
+    
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
