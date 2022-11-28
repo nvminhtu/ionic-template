@@ -35,6 +35,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'ionic-life-cycle',
+    loadChildren: () =>
+      import('./pages/ionic-life-cycle/ionic-life-cycle.module').then(
+        (m) => m.IonicLifeCyclePageModule
+      ),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
@@ -47,19 +54,17 @@ const routes: Routes = [
       ),
   },
   {
-<<<<<<< HEAD
-    path: 'ionic-modal-advanced',
+    path: RoutePath.IonModalAdvanced,
     loadChildren: () =>
       import('./pages/ionic-modal-advanced/ionic-modal-advanced.module').then(
         (m) => m.IonicModalAdvancedPageModule
       ),
   },
-=======
+  {
     path: 'rxjs',
-    loadChildren: () => import('./pages/rxjs/rxjs.module').then( m => m.RxjsPageModule)
+    loadChildren: () =>
+      import('./pages/rxjs/rxjs.module').then((m) => m.RxjsPageModule),
   },
-
->>>>>>> 223f3ca619931519f3924a7ed0f1449086cebb2a
 ];
 
 @NgModule({

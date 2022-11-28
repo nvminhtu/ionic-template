@@ -13,12 +13,9 @@ export class MtNavBarMenuComponent implements OnInit {
     { title: 'Async', url: RoutePath.Async },
     { title: 'HttpRxJS', url: RoutePath.HttpRxJS },
     { title: 'IonicLifeCycle', url: RoutePath.IonicLifeCycle },
+    { title: 'Ionic Modal Advanced', url: RoutePath.IonModalAdvanced },
     { title: 'ReactiveForm', url: RoutePath.ReactiveForm },
-<<<<<<< HEAD
-    { title: 'Ionic Modal Advanced', url: RoutePath.IonicModalAvanced },
-=======
     { title: 'RxJS', url: RoutePath.RxJS },
->>>>>>> 223f3ca619931519f3924a7ed0f1449086cebb2a
   ];
 
   constructor() {
