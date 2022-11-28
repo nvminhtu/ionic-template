@@ -46,6 +46,13 @@ const routes: Routes = [
         (m) => m.ReactiveFormPageModule
       ),
   },
+  {
+    path: 'ionic-modal-advanced',
+    loadChildren: () =>
+      import('./pages/ionic-modal-advanced/ionic-modal-advanced.module').then(
+        (m) => m.IonicModalAdvancedPageModule
+      ),
+  },
 ];
 
 @NgModule({

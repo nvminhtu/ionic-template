@@ -13,6 +13,8 @@ export class ReactiveFormPage implements OnInit {
     this.ionicForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
+      // dob: ['', Validator]
+      mobile: ['', Validators.required],
     });
   }
 
