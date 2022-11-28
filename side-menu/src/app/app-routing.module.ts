@@ -49,7 +49,15 @@ const routes: Routes = [
   {
     path: 'rxjs',
     loadChildren: () => import('./pages/rxjs/rxjs.module').then( m => m.RxjsPageModule)
+  },  {
+    path: 'simple-modal',
+    loadChildren: () => import('./modal/simple-modal/simple-modal.module').then( m => m.SimpleModalPageModule)
   },
+  {
+    path: 'update-modal',
+    loadChildren: () => import('./modal/update-modal/update-modal.module').then( m => m.UpdateModalPageModule)
+  }
+
 
 ];
 
