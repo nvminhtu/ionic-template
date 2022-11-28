@@ -64,7 +64,11 @@ const routes: Routes = [
     path: 'rxjs',
     loadChildren: () =>
       import('./pages/rxjs/rxjs.module').then((m) => m.RxjsPageModule),
+  },  {
+    path: 'toast-modal',
+    loadChildren: () => import('./modals/toast-modal/toast-modal.module').then( m => m.ToastModalPageModule)
   },
+
 ];
 
 @NgModule({
