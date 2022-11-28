@@ -35,6 +35,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'ionic-life-cycle',
+    loadChildren: () =>
+      import('./pages/ionic-life-cycle/ionic-life-cycle.module').then(
+        (m) => m.IonicLifeCyclePageModule
+      ),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
@@ -47,17 +54,21 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'rxjs',
-    loadChildren: () => import('./pages/rxjs/rxjs.module').then( m => m.RxjsPageModule)
-  },  {
-    path: 'simple-modal',
-    loadChildren: () => import('./modal/simple-modal/simple-modal.module').then( m => m.SimpleModalPageModule)
+    path: RoutePath.IonModalAdvanced,
+    loadChildren: () =>
+      import('./pages/ionic-modal-advanced/ionic-modal-advanced.module').then(
+        (m) => m.IonicModalAdvancedPageModule
+      ),
   },
   {
-    path: 'update-modal',
-    loadChildren: () => import('./modal/update-modal/update-modal.module').then( m => m.UpdateModalPageModule)
-  }
-
+    path: 'rxjs',
+    loadChildren: () =>
+      import('./pages/rxjs/rxjs.module').then((m) => m.RxjsPageModule),
+  },
+  {
+    path: 'toast-modal',
+    loadChildren: () => import('./modals/toast-modal/toast-modal.module').then( m => m.ToastModalPageModule)
+  },
 
 ];
 

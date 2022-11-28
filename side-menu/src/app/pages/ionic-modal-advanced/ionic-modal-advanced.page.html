@@ -1,0 +1,28 @@
+<app-mt-custom-header pageTitle="Advanced Modal"></app-mt-custom-header>
+
+<ion-content class="ion-padding">
+  <p>Inline Modal</p>
+  <ion-button expand="full" id="openModal"> I open the modal </ion-button>
+
+  <ion-modal
+    trigger="openModal"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.5, 1]"
+  >
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title> Inline </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-item>
+          This is so cool!
+          <p>And a bit funny</p>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button (click)="presentModal()">Click to open Modal</ion-button>
+</ion-content>

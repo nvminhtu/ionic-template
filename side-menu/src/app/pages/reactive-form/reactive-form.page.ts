@@ -9,7 +9,7 @@ import { throws } from 'assert';
 })
 export class ReactiveFormPage implements OnInit {
   ionicForm: FormGroup | any;
-  defaultDate: string =  "1987-06-30";
+  defaultDate: string = '1987-06-30';
   isSubmitted: boolean = false;
   // inject the FormBuilder Service into the constructor
   constructor(public formBuilder: FormBuilder) {
@@ -17,23 +17,23 @@ export class ReactiveFormPage implements OnInit {
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', Validators.required],
       mobile: ['', Validators.required],
-      dob:  ['', Validators.required],
+      dob: ['', Validators.required],
     });
   }
-  
+
   ngOnInit() {}
-  getDate(e : any) {
+  getDate(e: any) {
     let date = new Date(e.target.value).toISOString().substring(0, 10);
     this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
+      onlyself: true,
+    });
   }
 
   getMonth() {
-    let month = new Date().getMonth().toString()
+    let month = new Date().getMonth().toString();
     this.ionicForm.get('name').setValue(month, {
-      onlyself: true
-    })
+      onlyself: true,
+    });
   }
 
   get errorControl() {
@@ -42,8 +42,8 @@ export class ReactiveFormPage implements OnInit {
 
   submitForm() {
     this.isSubmitted = true;
-    if(!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
+    if (!this.ionicForm.valid) {
+      console.log('Please provide all the required values!');
       return false;
     } else {
       console.log(this.ionicForm.value);

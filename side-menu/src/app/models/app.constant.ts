@@ -4,6 +4,7 @@ export const RoutePath = {
   Async: 'async',
   HttpRxJS: 'http-rxjs',
   IonicLifeCycle: 'ionic-life-cycle',
+  IonModalAdvanced: 'ionic-modal-advanced',
   ReactiveForm: 'reactive-form',
-  RxJS: 'rxjs'
+  RxJS: 'rxjs',
 };

@@ -1,0 +1,24 @@
+<ion-content>
+  <input [formControl]="phoneNumber" />
+  <!-- (1) -->
+  <div *ngIf="phoneNumber.invalid">
+    <!-- (2) -->
+    <div *ngIf="(phoneNumber.dirty || phoneNumber.touched)">
+      <!-- (3) -->
+      <div *ngIf="phoneNumber.errors?.['tooLong']">
+        Your phone number has too many digits! You entered {{
+        phoneNumber.errors?.['tooLong'].numDigits }} digits (required: 10)
+      </div>
+      <div *ngIf="phoneNumber.errors?.['tooShort']">
+        Your phone number is too short! You entered {{
+        phoneNumber.errors?.['tooShort'].numDigits }} digits (required: 10)
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+phoneNumber = new FormControl([ (control: AbstractControl) => { // remove any
+input that isn't a digit const numDigits = control.value.replace(/[^\d]+/g,
+'').length; // only working with US numbers for now, don't need a country code
+if (numDigits === 10) { return null; } if (numDigits > 10) { return { tooLong: {
+numDigits }, }; } else { return { tooShort: { numDigits }, }; } }, ]);
