@@ -5,6 +5,8 @@ import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { reduce, filter } from 'rxjs';
+import { count } from 'rxjs';
+
 // use: for Observable
 @Component({
   selector: 'app-rxjs',
@@ -20,7 +22,7 @@ export class RxjsPage implements OnInit {
 
   constructor() {}
 
-  // #mt1: first demo Observable
+  // #mt01: first demo Observable
   firstObservable() {
     var observer = new Observable(function subscribe2(subscriber) {
       subscriber.next('Call the first Observable!!');
@@ -28,6 +30,7 @@ export class RxjsPage implements OnInit {
     observer.subscribe((x) => console.log(x));
   }
 
+  // #mt02: second demo Observable with catch Error
   secondObservable() {
     var observer = new Observable(function subscribe(subscriber) {
       try {
@@ -43,6 +46,7 @@ export class RxjsPage implements OnInit {
     observer.subscribe((x) => console.log(x));
   }
 
+  // #mt03: third demo for Obseravable with pipe & pure functions
   operatorObservable() {
     let obs = of(1, 2, 3, 4, 5, 6, 7, 8, 9);
     // 2,4,6,8
@@ -67,6 +71,14 @@ export class RxjsPage implements OnInit {
     case01.subscribe((x) => console.log(x));
   }
 
+  // #mt04: fourth demo for Observable: test count(), subscribe, & unsubscribe
+  unsubObersvable() {
+    let all_nums = of(22, 7, 10, 11, 18, 32);
+    let total = all_nums.pipe(count());
+    let testcase = total.subscribe((x) => console.log(x));
+    testcase.unsubscribe();
+  }
+
   ofGenerateFunc() {
     // test rxJS: Of
     this.nums = of(1, 2, 3); // complete: 'complete' - output: 1,2,3
@@ -82,6 +94,7 @@ export class RxjsPage implements OnInit {
     // this.ofGenerateFunc();
     // this.firstObservable();
     // this.secondObservable();
-    this.operatorObservable();
+    // this.operatorObservable();
+    this.unsubObersvable();
   }
 }
