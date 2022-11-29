@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, AbstractControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { reduce, filter } from 'rxjs';
 import { count } from 'rxjs';
+import { first } from 'rxjs';
 
 // use: for Observable
 @Component({
@@ -21,6 +22,19 @@ export class RxjsPage implements OnInit {
   data: number[] = [];
 
   constructor() {}
+
+  
+  // #mt00: creation Operator
+  ofGenerateFunc() {
+    // test rxJS: Of
+    this.nums = of(1, 2, 3); // complete: 'complete' - output: 1,2,3
+    this.squareValues = map((val: number) => val * val); // function này : sử dụng hàm map thông thường
+    // this.squaredNums = this.squareValues(this.nums);  // chạy hàm map cho nums: là 1 Observable từ tập giá trị Primittives
+    // this.squaredNums.subscribe((x:number) => console.log(x)); // . subscribe(observer)
+    // this.data = this.squaredNums.subscribe((x: number)=> console.log(x));
+    const source$ = of(1, 2, 3, 4, 5); //output: 1,2,3,4,5
+    const subscribe = source$.subscribe((val: number) => this.data.push(val));
+  }
 
   // #mt01: first demo Observable
   firstObservable() {
@@ -77,24 +91,40 @@ export class RxjsPage implements OnInit {
     let total = all_nums.pipe(count());
     let testcase = total.subscribe((x) => console.log(x));
     testcase.unsubscribe();
+
   }
 
-  ofGenerateFunc() {
-    // test rxJS: Of
-    this.nums = of(1, 2, 3); // complete: 'complete' - output: 1,2,3
-    this.squareValues = map((val: number) => val * val); // function này : sử dụng hàm map thông thường
-    // this.squaredNums = this.squareValues(this.nums);  // chạy hàm map cho nums: là 1 Observable từ tập giá trị Primittives
-    // this.squaredNums.subscribe((x:number) => console.log(x)); // . subscribe(observer)
-    // this.data = this.squaredNums.subscribe((x: number)=> console.log(x));
-    const source$ = of(1, 2, 3, 4, 5); //output: 1,2,3,4,5
-    const subscribe = source$.subscribe((val: number) => this.data.push(val));
+  // #mt05: fifth demo for Observable: 
+  filterObservable() {
+      // vd1: find
+      from([1,2,3,4,5,6])
+        .pipe(
+          filter((x)=> x % 2 === 0) // loc mang va lay ra cac phan tu chia het cho 2
+        ).subscribe(console.log);
+
+
+      // vd2: first()
+      from([77,88,99,66,44,3,7,9])
+          .pipe(
+            first()
+          ).subscribe({
+            next: (v) => console.log(v),
+            error: (e) => console.error(e),
+            complete: () => console.info('complete')
+          });
+
+        // console.log(window.location.href);
+          
+        
   }
+
 
   ngOnInit() {
     // this.ofGenerateFunc();
     // this.firstObservable();
     // this.secondObservable();
     // this.operatorObservable();
-    this.unsubObersvable();
+    // this.unsubObersvable();
+    this.filterObservable();
   }
 }
